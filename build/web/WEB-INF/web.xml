@@ -8,6 +8,10 @@
         <servlet-name>Comprobante_Pago</servlet-name>
         <servlet-class>servlets.Comprobante_Pago</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Proceso</servlet-name>
+        <servlet-class>servlets.Proceso</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Agregar_al_Carro</servlet-name>
         <url-pattern>/agregar_al_carro.do</url-pattern>
@@ -16,6 +20,11 @@
         <servlet-name>Comprobante_Pago</servlet-name>
         <url-pattern>/comprobante_pago.do</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Proceso</servlet-name>
+        <url-pattern>/proceso.do</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30
