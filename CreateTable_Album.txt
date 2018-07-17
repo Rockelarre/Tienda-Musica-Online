@@ -1,0 +1,8 @@
+create table album (
+cod_album varchar(50),
+artista varchar(50),
+album varchar(50),
+año_edicion varchar(50),
+formato varchar(50),
+precio integer
+)
