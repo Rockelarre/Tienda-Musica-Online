@@ -8,6 +8,7 @@ package datos;
 import java.sql.*;
 import java.util.ArrayList;
 import negocio.Album;
+import negocio.Album;
 
 /**
  *
@@ -22,12 +23,16 @@ public class Conexion implements IConexion {
       
     }
     
+    /**
+     *
+     */
+    
     public void conectar()
     {
      try {
          //CADENA DE CONEXIÓN
          Class.forName("com.mysql.jdbc.Driver").newInstance();
-         con = DriverManager.getConnection("jdbc:mysql://localhost:3306/farmacia","root","");
+         con = DriverManager.getConnection("jdbc:mysql://localhost:3306/web_musica","root","");
          state = con.createStatement();
      }
      catch(Exception ex)
@@ -41,8 +46,8 @@ public class Conexion implements IConexion {
          try{
 
          conectar();
-         state.executeUpdate("INSERT INTO album VALUES('"+album.getArtista()+
-         "', '"+album.getNombre_album()+"',"+album.getAnho_edicion()+
+         state.executeUpdate("INSERT INTO album VALUES('"+album.getCod_album()+
+         "', '"+album.getArtista()+"', '"+album.getNombre_album()+"',"+album.getAnho_edicion()+
                  "',"+album.getFormato()+"',"+album.getPrecio()+");");
          con.close();
          }
@@ -92,19 +97,20 @@ public ArrayList<Album> listar() throws SQLException
 {
  conectar();
 
- ArrayList <Album>album = new ArrayList<Album>();
- ResultSet result = state.executeQuery("select * from medicamento");
+ ArrayList <Album>albumes = new ArrayList<Album>();
+ ResultSet result = state.executeQuery("select * from album");
  while (result.next())
  {
- Album alb = new Album();
- alb.setArtista((String)result.getObject(1));
- alb.setNombre_album((String)result.getObject(2));
- alb.setAnho_edicion((String)result.getObject(3));
- alb.setFormato((String)result.getObject(4));
- alb.setPrecio((Integer)result.getObject(5));
- album.add(alb);
+ Album album = new Album();
+ album.setCod_album((Integer)result.getObject(1));
+ album.setArtista((String)result.getObject(2));
+ album.setNombre_album((String)result.getObject(3));
+ album.setAnho_edicion((String)result.getObject(4));
+ album.setFormato((String)result.getObject(5));
+ album.setPrecio((Integer)result.getObject(6));
+ albumes.add(album);
  }
- return album;
+ return albumes;
 }
     
 /////////// BUSCAR POR CODIGO /////

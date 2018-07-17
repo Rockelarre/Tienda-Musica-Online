@@ -11,19 +11,26 @@ package negocio;
  */
 public class Album {
     
+     private int cod_album;
      private String artista; 
      private String nombre_album;
      private String anho_edicion; 
      private String formato; 
-     private double precio;
+     private int precio;
 
     
      
  public Album(){
+     cod_album = 0;
+     artista = ""; 
+     nombre_album = "";
+     anho_edicion = ""; 
+     formato = ""; 
+     precio = 0;
  }
  
  public Album(String artista, String nombre_album, String anho_edicion,
-         String formato, double precio){
+         String formato, int precio){
      this.artista = artista;
      this.nombre_album = nombre_album;
      this.anho_edicion = anho_edicion;
@@ -32,6 +39,15 @@ public class Album {
      
  }
 
+     public int getCod_album() {
+        return cod_album;
+    }
+
+    public void setCod_album(int cod_album) {
+        this.cod_album = cod_album;
+    }
+ 
+  
     /**
      * @return the artista
      */
@@ -87,7 +103,7 @@ public class Album {
     /**
      * @param precio the precio to set
      */
-    public void setPrecio(double precio) {
+    public void setPrecio(int precio) {
         this.precio = precio;
     }
 
@@ -104,27 +120,4 @@ public class Album {
     public void setAnho_edicion(String anho_edicion) {
         this.anho_edicion = anho_edicion;
     }
-    
-
-
-public void informacionAlbum()
-    {
-        
-        System.out.println("- Información de Album -");
-        System.out.println("Artista:"+artista);
-        System.out.println("Album:"+nombre_album);
-        System.out.println("Año Edición:"+anho_edicion);
-        System.out.println("Formato:"+formato);
-        System.out.println("Precio:"+precio);
-    }
-
-    public void setCantidad(Integer valueOf) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setCant(Integer valueOf) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-
 }

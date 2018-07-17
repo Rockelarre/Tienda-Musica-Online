@@ -26,5 +26,14 @@
             <file>file:/C:/Users/CIAN/Documents/NetBeansProjects/Evaluacion3%20-%20Versiones%20Funcionando/Evaluacion3_web_Musica_04/Evaluacion3_web_Musica_01/web/index.html</file>
             <file>file:/C:/Users/CIAN/Documents/NetBeansProjects/Evaluacion3%20-%20Versiones%20Funcionando/Evaluacion3_web_Musica_04/Evaluacion3_web_Musica_01/web/Catalogo%20de%20Albumes_0.jsp</file>
         </group>
+        <group name="Group 20180626-08:54:14">
+            <file>file:/C:/Users/CIAN/Documents/GitHub/Tienda-Musica-Online/src/java/datos/Conexion.java</file>
+            <file>file:/C:/Users/CIAN/Documents/GitHub/Tienda-Musica-Online/src/java/servlets/Proceso.java</file>
+            <file>file:/C:/Users/CIAN/Documents/GitHub/Tienda-Musica-Online/src/java/datos/IConexion.java</file>
+            <file>file:/C:/Users/CIAN/Documents/GitHub/Tienda-Musica-Online/web/Mantenedor%20Albumes.jsp</file>
+            <file>file:/C:/Users/CIAN/Documents/GitHub/Tienda-Musica-Online/src/java/negocio/Album.java</file>
+            <file>file:/C:/Users/CIAN/Documents/GitHub/Tienda-Musica-Online/web/index.html</file>
+            <file>file:/C:/Users/CIAN/Documents/GitHub/Tienda-Musica-Online/web/WEB-INF/web.xml</file>
+        </group>
     </open-files>
 </project-private>

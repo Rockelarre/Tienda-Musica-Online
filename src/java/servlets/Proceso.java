@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import negocio.Album;
+import negocio.Album;
 
 /**
  *
@@ -37,18 +38,21 @@ public class Proceso extends HttpServlet {
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            
            Conexion con = new Conexion();
+           
            ////// GUARDAR /////////////////////////////
            if (request.getParameter("btn_guardar")!=null)
            {
             Album alb = new Album();
-            alb.setArtista(request.getParameter("txt_codigo"));
-            alb.setNombre_album(request.getParameter("txt_farmaco"));
-            alb.setAnho_edicion(request.getParameter("txt_codigo"));
-            alb.setFormato(request.getParameter("txt_farmaco"));
+            alb.setCod_album(Integer.valueOf(request.getParameter("txt_codigo")));
+            alb.setArtista(request.getParameter("txt_artista"));
+            alb.setNombre_album(request.getParameter("txt_album"));
+            alb.setAnho_edicion(request.getParameter("txt_anho"));
+            alb.setFormato(request.getParameter("txt_formato"));
             alb.setPrecio(Integer.valueOf(request.getParameter("txt_precio")));    
             con.insertar(alb);
-            response.sendRedirect("formulario.jsp?mensaje="+"Farmaco ingresado");
+            response.sendRedirect("Mantenedor Albumes.jsp?mensaje="+"Album ingresado");
            }
            
            //////// ELIMINAR /////
@@ -90,8 +94,8 @@ public class Proceso extends HttpServlet {
            if (request.getParameter("btn_listar")!=null)
            {
                  ArrayList<Album>lista = con.listar();
-                 request.getSession().setAttribute("listaMedicamento", lista);
-                 response.sendRedirect("formulario.jsp?valor_listar="+"true");
+                 request.getSession().setAttribute("listaAlbum", lista);
+                 response.sendRedirect("Mantenedor Albumes.jsp?valor_listar="+"true");
            }
            
            ///////////  BUSCAR POR CODIGO //////////

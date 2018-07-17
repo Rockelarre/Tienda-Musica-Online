@@ -8,6 +8,7 @@ package datos;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import negocio.Album;
+import negocio.Album;
 
 /**
  *
