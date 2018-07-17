@@ -64,19 +64,45 @@
                 </td>
                 <td>
                     
-                    <h3><input type="text" name="txt_codigo" value="<%= alb.getCod_album() %>" required></h3>
-                    <h3><input type="text" name="txt_artista" value="<%= alb.getArtista() %>" required></h3>
-                    <h3><input type="text" name="txt_album" value="<%= alb.getNombre_album() %>" required></h3>
+                    <h3><input type="text" name="txt_codigo" value="<%= alb.getCod_album() %>" ></h3>
+                    <h3><input type="text" name="txt_artista" value="<%= alb.getArtista() %>" ></h3>
+                    <h3><input type="text" name="txt_album" value="<%= alb.getNombre_album() %>" ></h3>
                     <h3>
-                    <input type="text" name="txt_anho" value="<%= alb.getAnho_edicion() %>" >
-                    
-                    </h3>
-                    <h3>
-                    <input type="text" name="txt_formato" value="<%= alb.getFormato() %>">
+                    <select name="txt_anho" value="<%= alb.getAnho_edicion() %>" >
+                        <option>2018</option>
+                        <option>2017</option>
+                        <option>2016</option>
+                        <option>2015</option>
+                        <option>2014</option>
+                        <option>2013</option>
+                        <option>2012</option>
+                        <option>2011</option>
+                        <option>2010</option>
+                        <option>2009</option>
+                        <option>2008</option>
+                        <option>2007</option>
+                        <option>2006</option>
+                        <option>2005</option>
+                        <option>2004</option>
+                        <option>2003</option>
+                        <option>2002</option>
+                        <option>2001</option>
                         
-                    
+                        
+                    </select>
                     </h3>
-                    <h3><input type="text" name="txt_precio" value="<%= alb.getPrecio() %>" required></h3>
+                    <h3>
+                    <select  name="txt_formato" value="<%= alb.getFormato() %>">
+                        <option>Vinilo</option>
+                        <option>Cassete</option>
+                        <option>CD</option>
+                        <option>DVD</option>
+                        <option>BlueRay</option>
+                        <option>Mp3</option> 
+                        <option>Flac</option> 
+                    </select>
+                    </h3>
+                    <h3><input type="text" name="txt_precio" value="<%= alb.getPrecio() %>" ></h3>
                 </td>
                 
              </tr>

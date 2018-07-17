@@ -8,7 +8,6 @@ package datos;
 import java.sql.*;
 import java.util.ArrayList;
 import negocio.Album;
-import negocio.Album;
 
 /**
  *
@@ -63,7 +62,7 @@ public class Conexion implements IConexion {
          try{
          
          conectar();
-         inserto= state.executeUpdate("DELETE FROM album WHERE codigo='"+codigo+"'; ");
+         inserto= state.executeUpdate("DELETE FROM album WHERE cod_album='"+codigo+"'; ");
          con.close();
          }
          catch(Exception ex)
@@ -102,7 +101,7 @@ public ArrayList<Album> listar() throws SQLException
  while (result.next())
  {
  Album album = new Album();
- album.setCod_album((Integer)result.getObject(1));
+ album.setCod_album((String)result.getObject(1));
  album.setArtista((String)result.getObject(2));
  album.setNombre_album((String)result.getObject(3));
  album.setAnho_edicion((String)result.getObject(4));
@@ -119,14 +118,15 @@ public Album buscar(String codigo) throws SQLException
 {
  conectar();
  Album alb = new Album();
- ResultSet result = state.executeQuery("select * from medicamento Where codigo='"+codigo+"';");
+ ResultSet result = state.executeQuery("select * from album Where cod_album='"+codigo+"';");
  while (result.next())
  {
- alb.setArtista((String)result.getObject(1));
- alb.setNombre_album((String)result.getObject(2));
- alb.setAnho_edicion((String)result.getObject(3));
- alb.setFormato((String)result.getObject(4));
- alb.setPrecio((Integer)result.getObject(5));
+ alb.setCod_album((String)result.getObject(1));
+ alb.setArtista((String)result.getObject(2));
+ alb.setNombre_album((String)result.getObject(3));
+ alb.setAnho_edicion((String)result.getObject(4));
+ alb.setFormato((String)result.getObject(5));
+ alb.setPrecio((Integer)result.getObject(6));
  }
  return alb;
 }

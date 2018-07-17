@@ -11,7 +11,7 @@ package negocio;
  */
 public class Album {
     
-     private int cod_album;
+     private String cod_album;
      private String artista; 
      private String nombre_album;
      private String anho_edicion; 
@@ -21,7 +21,7 @@ public class Album {
     
      
  public Album(){
-     cod_album = 0;
+     cod_album = "";
      artista = ""; 
      nombre_album = "";
      anho_edicion = ""; 
@@ -39,11 +39,11 @@ public class Album {
      
  }
 
-     public int getCod_album() {
+     public String getCod_album() {
         return cod_album;
     }
 
-    public void setCod_album(int cod_album) {
+    public void setCod_album(String cod_album) {
         this.cod_album = cod_album;
     }
  

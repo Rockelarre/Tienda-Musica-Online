@@ -17,7 +17,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import negocio.Album;
-import negocio.Album;
 
 /**
  *
@@ -45,7 +44,7 @@ public class Proceso extends HttpServlet {
            if (request.getParameter("btn_guardar")!=null)
            {
             Album alb = new Album();
-            alb.setCod_album(Integer.valueOf(request.getParameter("txt_codigo")));
+            alb.setCod_album(request.getParameter("txt_codigo"));
             alb.setArtista(request.getParameter("txt_artista"));
             alb.setNombre_album(request.getParameter("txt_album"));
             alb.setAnho_edicion(request.getParameter("txt_anho"));
@@ -58,14 +57,14 @@ public class Proceso extends HttpServlet {
            //////// ELIMINAR /////
            if (request.getParameter("btn_eliminar")!=null)
            {
-               String codigo = request.getParameter("txt_Artista");
+               String codigo = request.getParameter("txt_Codigo");
                if (con.eliminar(codigo)!=0)
                {
-                    response.sendRedirect("formulario.jsp?mensaje="+"Farmaco ha sido Eliminado");
+                    response.sendRedirect("Mantenedor Albumes.jsp?mensaje="+"Album ha sido Eliminado");
                }
                else
                {
-                 response.sendRedirect("formulario.jsp?mensaje="+"Farmaco No eliminado");
+                 response.sendRedirect("Mantenedor Albumes.jsp?mensaje="+"Album No eliminado");
                }
            }         
            
@@ -81,11 +80,11 @@ public class Proceso extends HttpServlet {
                    alb.setPrecio(Integer.valueOf(request.getParameter("txt_precio"))); 
                    if (con.modificar(alb)!=0)
                    {
-                       response.sendRedirect("formulario.jsp?mensaje="+"Farmaco correctamente modificado");
+                       response.sendRedirect("Mantenedor Albumes.jsp?mensaje="+"Farmaco correctamente modificado");
                    }
                    else
                    {
-                      response.sendRedirect("formulario.jsp?mensaje="+"Farmaco No Modificado");
+                      response.sendRedirect("Mantenedor Albumes.jsp?mensaje="+"Farmaco No Modificado");
                    }
            
            }
@@ -108,11 +107,11 @@ public class Proceso extends HttpServlet {
                if (alb.getArtista().length()>0)
                {
                 request.getSession().setAttribute("objetoBuscado", alb);
-                 response.sendRedirect("formulario.jsp?valor_buscar="+"true");
+                 response.sendRedirect("Mantenedor Albumes.jsp?valor_buscar="+"true");
                }
                else
                {
-                 response.sendRedirect("formulario.jsp?mensaje="+"Medicamento No encontrado");
+                 response.sendRedirect("Mantenedor Albumes.jsp?mensaje="+"Album No encontrado");
                }
            }
            
