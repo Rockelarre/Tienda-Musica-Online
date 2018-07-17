@@ -49,7 +49,7 @@
     <body>
         <div>
         
-            <h2>....</h2>
+            <br><br>
              <table style="border: 3px solid gray; border-radius: 15px; width: 30%; 
                     text-align: center; background-color: #fefefe; ">
              <tr>

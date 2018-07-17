@@ -47,8 +47,8 @@ public class Conexion implements IConexion {
 
          conectar();
          state.executeUpdate("INSERT INTO album VALUES('"+album.getCod_album()+
-         "', '"+album.getArtista()+"', '"+album.getNombre_album()+"',"+album.getAnho_edicion()+
-                 "',"+album.getFormato()+"',"+album.getPrecio()+");");
+         "', '"+album.getArtista()+"', '"+album.getNombre_album()+"', '"+album.getAnho_edicion()+
+                 "', '"+album.getFormato()+"',"+album.getPrecio()+");");
          con.close();
          }
          catch(Exception ex)
