@@ -62,7 +62,7 @@ public class Conexion implements IConexion {
          try{
          
          conectar();
-         inserto= state.executeUpdate("DELETE FROM album WHERE cod_album='"+codigo+"'; ");
+         inserto= state.executeUpdate("DELETE FROM album Where cod_album='"+codigo+"';");
          con.close();
          }
          catch(Exception ex)
@@ -79,9 +79,8 @@ public int modificar(Album album)
     int entero = 0;
     try{
     conectar();
-    entero = state.executeUpdate("update album set farmaco='"+
-    album.getNombre_album()+"', precio="+album.getPrecio()+
-    " where codigo='"+album.getArtista()+"';");
+    entero = state.executeUpdate("update tabla1 set artista='"+album.getArtista()+"',album='"+album.getNombre_album()+"',año_edicion='"+album.getAnho_edicion()+"', "
+                                    + "formato='"+album.getFormato()+"', precio='"+album.getPrecio()+"' where cod_album='"+album.getCod_album()+"'");
     con.close();
     }
     catch(Exception ex)

@@ -74,17 +74,18 @@ public class Proceso extends HttpServlet {
            {
                    Album alb = new Album();
                    alb.setArtista(request.getParameter("txt_codigo"));
-                   alb.setNombre_album(request.getParameter("txt_farmaco"));
-                   alb.setAnho_edicion(request.getParameter("txt_codigo"));
-                   alb.setFormato(request.getParameter("txt_farmaco"));
+                   alb.setNombre_album(request.getParameter("txt_artista"));
+                   alb.setAnho_edicion(request.getParameter("txt_album"));
+                   alb.setFormato(request.getParameter("txt_anho"));
+                   alb.setFormato(request.getParameter("txt_txt_formato"));
                    alb.setPrecio(Integer.valueOf(request.getParameter("txt_precio"))); 
                    if (con.modificar(alb)!=0)
                    {
-                       response.sendRedirect("Mantenedor Albumes.jsp?mensaje="+"Farmaco correctamente modificado");
+                       response.sendRedirect("Mantenedor Albumes.jsp?mensaje="+"Album correctamente modificado");
                    }
                    else
                    {
-                      response.sendRedirect("Mantenedor Albumes.jsp?mensaje="+"Farmaco No Modificado");
+                      response.sendRedirect("Mantenedor Albumes.jsp?mensaje="+"Album No Modificado");
                    }
            
            }
