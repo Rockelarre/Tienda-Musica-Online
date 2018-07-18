@@ -9,10 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import negocio.Album;
 
-/**
- *
- * @author alumnossur
- */
+
 public class Conexion implements IConexion {
     private Connection con;
     private Statement state;
@@ -79,8 +76,7 @@ public int modificar(Album album)
     int entero = 0;
     try{
     conectar();
-    entero = state.executeUpdate("update tabla1 set artista='"+album.getArtista()+"',album='"+album.getNombre_album()+"',año_edicion='"+album.getAnho_edicion()+"', "
-                                    + "formato='"+album.getFormato()+"', precio='"+album.getPrecio()+"' where cod_album='"+album.getCod_album()+"'");
+    entero = state.executeUpdate("update album set artista='"+album.getArtista()+"',album='"+album.getNombre_album()+"',año_edicion='"+album.getAnho_edicion()+"',formato='"+album.getFormato()+"',precio="+album.getPrecio()+" where cod_album='"+album.getCod_album()+"';");
     con.close();
     }
     catch(Exception ex)

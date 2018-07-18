@@ -18,10 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import negocio.Album;
 
-/**
- *
- * @author alumnossur
- */
+
 public class Proceso extends HttpServlet {
 
     /**
@@ -57,7 +54,7 @@ public class Proceso extends HttpServlet {
            //////// ELIMINAR /////
            if (request.getParameter("btn_eliminar")!=null)
            {
-               String codigo = request.getParameter("txt_Codigo");
+               String codigo = request.getParameter("txt_codigo");
                if (con.eliminar(codigo)!=0)
                {
                     response.sendRedirect("Mantenedor Albumes.jsp?mensaje="+"Album ha sido Eliminado");
@@ -73,11 +70,11 @@ public class Proceso extends HttpServlet {
            if (request.getParameter("btn_modificar")!=null)
            {
                    Album alb = new Album();
-                   alb.setArtista(request.getParameter("txt_codigo"));
-                   alb.setNombre_album(request.getParameter("txt_artista"));
-                   alb.setAnho_edicion(request.getParameter("txt_album"));
-                   alb.setFormato(request.getParameter("txt_anho"));
-                   alb.setFormato(request.getParameter("txt_txt_formato"));
+                   alb.setCod_album(request.getParameter("txt_codigo"));
+                   alb.setArtista(request.getParameter("txt_artista"));
+                   alb.setNombre_album(request.getParameter("txt_album"));
+                   alb.setAnho_edicion(request.getParameter("txt_anho"));
+                   alb.setFormato(request.getParameter("txt_formato"));
                    alb.setPrecio(Integer.valueOf(request.getParameter("txt_precio"))); 
                    if (con.modificar(alb)!=0)
                    {

@@ -10,10 +10,7 @@ import java.util.ArrayList;
 import negocio.Album;
 import negocio.Album;
 
-/**
- *
- * @author alumnossur
- */
+
 public interface IConexion {
      void conectar();
      void insertar(Album album);
